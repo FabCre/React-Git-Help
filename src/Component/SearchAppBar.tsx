@@ -9,38 +9,38 @@ import {
   createStyles,
   fade,
   Theme,
-  makeStyles
+  makeStyles,
 } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      flexGrow: 1
+      flexGrow: 1,
     },
     menuButton: {
-      marginRight: theme.spacing(2)
+      marginRight: theme.spacing(2),
     },
     title: {
       flexGrow: 1,
       textAlign: 'center',
       display: 'none',
       [theme.breakpoints.up('sm')]: {
-        display: 'block'
-      }
+        display: 'block',
+      },
     },
     search: {
       position: 'relative',
       borderRadius: theme.shape.borderRadius,
       backgroundColor: fade(theme.palette.common.white, 0.15),
       '&:hover': {
-        backgroundColor: fade(theme.palette.common.white, 0.25)
+        backgroundColor: fade(theme.palette.common.white, 0.25),
       },
       marginLeft: 0,
       width: '100%',
       [theme.breakpoints.up('sm')]: {
         marginLeft: theme.spacing(1),
-        width: 'auto'
-      }
+        width: 'auto',
+      },
     },
     searchIcon: {
       width: theme.spacing(7),
@@ -49,10 +49,10 @@ const useStyles = makeStyles((theme: Theme) =>
       pointerEvents: 'none',
       display: 'flex',
       alignItems: 'center',
-      justifyContent: 'center'
+      justifyContent: 'center',
     },
     inputRoot: {
-      color: 'inherit'
+      color: 'inherit',
     },
     inputInput: {
       padding: theme.spacing(1, 1, 1, 7),
@@ -61,24 +61,28 @@ const useStyles = makeStyles((theme: Theme) =>
       [theme.breakpoints.up('sm')]: {
         width: 120,
         '&:focus': {
-          width: 200
-        }
-      }
-    }
-  })
+          width: 200,
+        },
+      },
+    },
+  }),
 );
 
-const SearchAppBar: React.FC = ({children})=> {
-  const classes = useStyles();
+type SearchAppBarType = React.FC<{
+  chooseCategory: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  category: string;
+}>;
 
+const SearchAppBar: SearchAppBarType = ({ chooseCategory, category }) => {
+  const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <AppBar position="static" color="inherit">
         <Toolbar>
-          <MenuButton children={children} />
+          <MenuButton children={chooseCategory} />
           <Typography className={classes.title} variant="h4" noWrap>
-            Git Help
+            Git Help {category ? category : null}
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -88,7 +92,7 @@ const SearchAppBar: React.FC = ({children})=> {
               placeholder="Search…"
               classes={{
                 root: classes.inputRoot,
-                input: classes.inputInput
+                input: classes.inputInput,
               }}
               inputProps={{ 'aria-label': 'search' }}
             />

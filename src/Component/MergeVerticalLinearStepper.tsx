@@ -7,7 +7,7 @@ import StepContent from '@material-ui/core/StepContent';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import mergeSteps from './data/merge';
+import mergeSteps, { getMergeStepContent } from '../data/merge';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -26,24 +26,6 @@ const useStyles = makeStyles((theme: Theme) =>
     },
   }),
 );
-
-function getStepContent(step: number) {
-  switch (step) {
-    case 0:
-      return `For each ad campaign that you create, you can control how much
-              you're willing to spend on clicks and conversions, which networks
-              and geographical locations you want your ads to show on, and more.`;
-    case 1:
-      return 'An ad group contains one or more ads which target a shared set of keywords.';
-    case 2:
-      return `Try out different ad text to see what brings in the most customers,
-              and learn how to enhance your ads using features like ad extensions.
-              If you run into any problems with your ads, find out how to tell if
-              they're running and how to resolve approval issues.`;
-    default:
-      return 'Unknown step';
-  }
-}
 
 const MergeVerticalLinearStepper: React.FC = () => {
   const classes = useStyles();
@@ -68,7 +50,7 @@ const MergeVerticalLinearStepper: React.FC = () => {
           <Step key={label}>
             <StepLabel>{label}</StepLabel>
             <StepContent>
-              <Typography>{getStepContent(index)}</Typography>
+              <Typography>{getMergeStepContent(index)}</Typography>
               <div className={classes.actionsContainer}>
                 <div>
                   <Button
@@ -76,7 +58,7 @@ const MergeVerticalLinearStepper: React.FC = () => {
                     onClick={handleBack}
                     className={classes.button}
                   >
-                    Back
+                    Précédent
                   </Button>
                   <Button
                     variant="contained"
@@ -84,7 +66,7 @@ const MergeVerticalLinearStepper: React.FC = () => {
                     onClick={handleNext}
                     className={classes.button}
                   >
-                    {activeStep === mergeSteps.length - 1 ? 'Finish' : 'Next'}
+                    {activeStep === mergeSteps.length - 1 ? 'Terminé' : 'Suivant'}
                   </Button>
                 </div>
               </div>
@@ -94,7 +76,7 @@ const MergeVerticalLinearStepper: React.FC = () => {
       </Stepper>
       {activeStep === mergeSteps.length && (
         <Paper square elevation={0} className={classes.resetContainer}>
-          <Typography>All steps completed - you&apos;re finished</Typography>
+          <Typography>Merge Terminé!</Typography>
           <Button onClick={handleReset} className={classes.button}>
             Reset
           </Button>

@@ -6,7 +6,7 @@ import GitConfig from './GitConfig';
 import CommandTable from './CommandTable';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
 import RebaseVerticalLinearStepper from './RebaseVerticalLinearStepper';
-import MergeVerticalLinearStepper from "./MergeVerticalLinearStepper";
+import MergeVerticalLinearStepper from './MergeVerticalLinearStepper';
 
 const theme = createMuiTheme({
   overrides: {
@@ -34,7 +34,7 @@ const App: React.FC = () => {
   return (
     <div className="root">
       <MuiThemeProvider theme={theme}>
-        <SearchAppBar children={onCategoryChoose} />
+        <SearchAppBar chooseCategory={onCategoryChoose}category={category}/>
         {category === 'GitConfig' && <GitConfig />}
         {category === 'Command' && <CommandTable />}
         {category === 'Rebase Process' && <RebaseVerticalLinearStepper />}

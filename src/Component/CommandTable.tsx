@@ -6,7 +6,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import cmdTable from './data/command';
+import cmdTable from '../data/command';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -17,6 +17,10 @@ const useStyles = makeStyles((theme: Theme) =>
     table: {
       minWidth: 650,
     },
+    cmd: {
+      fontSize: 'medium',
+      fontWeight: 'bold'
+    }
   }),
 );
 
@@ -36,7 +40,7 @@ const CommandTable = () => {
         <TableBody>
           {cmdTable.map(cmd => (
             <TableRow key={cmd.cmd}>
-              <TableCell component="th" scope="row">
+              <TableCell component="th" scope="row" className={classes.cmd}>
                 {cmd.cmd}
               </TableCell>
               <TableCell align="left">{cmd.desc}</TableCell>

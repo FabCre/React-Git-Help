@@ -1,16 +1,16 @@
-import React from "react";
-import { Theme, createStyles, makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
-import Typography from "@material-ui/core/Typography";
-import {simpleConfig, advancedConfig} from "./data/configs";
+import React from 'react';
+import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import { simpleConfig, advancedConfig } from '../data/configs';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      margin: "1em",
-      padding: theme.spacing(2, 2)
-    }
-  })
+      margin: '1em',
+      padding: theme.spacing(2, 2),
+    },
+  }),
 );
 
 const GitConfig: React.FC = () => {
@@ -25,11 +25,9 @@ const GitConfig: React.FC = () => {
         <Typography component="p">Sur Linux: ~/.gitconfig</Typography>
         <Typography component="p">Sur Windows: C:\Users\YourName</Typography>
         <Typography component="p">Config simple:</Typography>
-        <textarea defaultValue={simpleConfig}>
-        </textarea>
+        <textarea defaultValue={simpleConfig} />
         <Typography component="p">Config @porteneuve:</Typography>
-        <textarea defaultValue={advancedConfig}>
-        </textarea>
+        <textarea defaultValue={advancedConfig} />
       </Paper>
     </div>
   );

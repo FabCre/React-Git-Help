@@ -1,5 +1,4 @@
-export const simpleConfig: string =
-`[user]
+export const simpleConfig: string = `[user]
         name = fabcre
         email = mail@mail.fr
 [push]
@@ -18,8 +17,7 @@ export const simpleConfig: string =
   addu = add -u # stages modified & deleted ("git add ." stages new & modified)
   adda = add -A # stages ALL`;
 
-export const advancedConfig: string =
-`[user]
+export const advancedConfig: string = `[user]
   name = Your Full Name
   email = your@email.tld
 [color]

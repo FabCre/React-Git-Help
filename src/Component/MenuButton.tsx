@@ -8,12 +8,12 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     menuButton: {
-      marginRight: theme.spacing(2)
-    }
-  })
+      marginRight: theme.spacing(2),
+    },
+  }),
 );
 
-const MenuButton: React.FC = ({children}: any)  => {
+const MenuButton: React.FC = ({ children: chooseCategory }: any) => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
@@ -45,10 +45,38 @@ const MenuButton: React.FC = ({children}: any)  => {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={(event) => children(event)}>Command</MenuItem>
-        <MenuItem onClick={(event) => children(event)}>Rebase Process</MenuItem>
-        <MenuItem onClick={(event) => children(event)}>Merge Process</MenuItem>
-        <MenuItem onClick={(event) => children(event)}>GitConfig</MenuItem>
+        <MenuItem
+          onClick={event => {
+            chooseCategory(event);
+            handleClose();
+          }}
+        >
+          Command
+        </MenuItem>
+        <MenuItem
+          onClick={event => {
+            chooseCategory(event);
+            handleClose();
+          }}
+        >
+          Rebase Process
+        </MenuItem>
+        <MenuItem
+          onClick={event => {
+            chooseCategory(event);
+            handleClose();
+          }}
+        >
+          Merge Process
+        </MenuItem>
+        <MenuItem
+          onClick={event => {
+            chooseCategory(event);
+            handleClose();
+          }}
+        >
+          GitConfig
+        </MenuItem>
       </Menu>
     </div>
   );
