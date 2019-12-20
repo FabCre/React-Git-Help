@@ -34,7 +34,7 @@ const App: React.FC = () => {
   return (
     <div className="root">
       <MuiThemeProvider theme={theme}>
-        <SearchAppBar chooseCategory={onCategoryChoose}category={category}/>
+        <SearchAppBar chooseCategory={onCategoryChoose} category={category}/>
         {category === 'GitConfig' && <GitConfig />}
         {category === 'Command' && <CommandTable />}
         {category === 'Rebase Process' && <RebaseVerticalLinearStepper />}
