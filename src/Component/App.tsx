@@ -31,12 +31,24 @@ const App: React.FC = () => {
     setCategory(event.currentTarget.innerText);
   };
 
+  const [searchValue, setSearchValue] = React.useState<string | null>(null);
+
+  const onSearchChange = (
+    event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>,
+  ) => {
+    setSearchValue(event.target.value);
+  };
+
   return (
     <div className="root">
       <MuiThemeProvider theme={theme}>
-        <SearchAppBar chooseCategory={onCategoryChoose} category={category}/>
+        <SearchAppBar
+          chooseCategory={onCategoryChoose}
+          searchChange={onSearchChange}
+          category={category}
+        />
         {category === 'GitConfig' && <GitConfig />}
-        {category === 'Command' && <CommandTable />}
+        {category === 'Command' && <CommandTable searchValue={searchValue} />}
         {category === 'Rebase Process' && <RebaseVerticalLinearStepper />}
         {category === 'Merge Process' && <MergeVerticalLinearStepper />}
       </MuiThemeProvider>

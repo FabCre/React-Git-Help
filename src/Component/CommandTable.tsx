@@ -19,12 +19,14 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     cmd: {
       fontSize: 'medium',
-      fontWeight: 'bold'
-    }
+      fontWeight: 'bold',
+    },
   }),
 );
 
-const CommandTable = () => {
+type CommandTable = React.FC<{ searchValue: string | null }>;
+
+const CommandTable: CommandTable = ({ searchValue }) => {
   const classes = useStyles();
 
   return (
@@ -38,15 +40,17 @@ const CommandTable = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {cmdTable.map(cmd => (
-            <TableRow key={cmd.cmd}>
-              <TableCell component="th" scope="row" className={classes.cmd}>
-                {cmd.cmd}
-              </TableCell>
-              <TableCell align="left">{cmd.desc}</TableCell>
-              <TableCell align="left">{cmd.exemple}</TableCell>
-            </TableRow>
-          ))}
+          {cmdTable
+            .filter(cmd => (searchValue ? cmd.cmd.includes(searchValue) : cmd))
+            .map(cmd => (
+              <TableRow key={cmd.cmd}>
+                <TableCell component="th" scope="row" className={classes.cmd}>
+                  {cmd.cmd}
+                </TableCell>
+                <TableCell align="left">{cmd.desc}</TableCell>
+                <TableCell align="left">{cmd.exemple}</TableCell>
+              </TableRow>
+            ))}
         </TableBody>
       </Table>
     </Paper>

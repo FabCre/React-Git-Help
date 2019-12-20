@@ -152,6 +152,11 @@ const cmdTable: Command[] = [
     desc: 'Applique les commits au dessus des autres commits.',
     exemple: 'se référer au rebase process.',
   },
+  {
+    cmd: 'git rebase --interactive',
+    desc:
+      'Permet de reword, fixup, saquash ou autre sur les commits qui ne sont pas encore push sur le remote.',
+  },
 ];
 
 export default cmdTable;

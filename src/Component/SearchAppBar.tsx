@@ -59,9 +59,9 @@ const useStyles = makeStyles((theme: Theme) =>
       transition: theme.transitions.create('width'),
       width: '100%',
       [theme.breakpoints.up('sm')]: {
-        width: 120,
+        width: 150,
         '&:focus': {
-          width: 200,
+          width: 175,
         },
       },
     },
@@ -70,10 +70,17 @@ const useStyles = makeStyles((theme: Theme) =>
 
 type SearchAppBarType = React.FC<{
   chooseCategory: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  searchChange: (
+    event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>,
+  ) => void;
   category: string;
 }>;
 
-const SearchAppBar: SearchAppBarType = ({ chooseCategory, category }) => {
+const SearchAppBar: SearchAppBarType = ({
+  chooseCategory,
+  searchChange,
+  category,
+}) => {
   const classes = useStyles();
 
   return (
@@ -84,19 +91,22 @@ const SearchAppBar: SearchAppBarType = ({ chooseCategory, category }) => {
           <Typography className={classes.title} variant="h4" noWrap>
             Git Help {category ? category : null}
           </Typography>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
+          {category === 'Command' && (
+            <div className={classes.search}>
+              <div className={classes.searchIcon}>
+                <SearchIcon />
+              </div>
+              <InputBase
+                placeholder="Search Command"
+                classes={{
+                  root: classes.inputRoot,
+                  input: classes.inputInput,
+                }}
+                inputProps={{ 'aria-label': 'search' }}
+                onChange={event => searchChange(event)}
+              />
             </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </div>
+          )}
         </Toolbar>
       </AppBar>
     </div>
