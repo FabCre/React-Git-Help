@@ -15,13 +15,18 @@ const useStyles = makeStyles((theme: Theme) =>
       margin: '1em',
     },
     button: {
+      fontSize: 'smaller',
+      padding: '1px 7px',
       marginTop: theme.spacing(1),
       marginRight: theme.spacing(1),
     },
     actionsContainer: {
+      fontSize: 'smaller',
+      padding: '1px 7px',
       marginBottom: theme.spacing(2),
     },
     resetContainer: {
+      fontSize: 'smaller',
       padding: theme.spacing(3),
     },
   }),
@@ -66,7 +71,9 @@ const MergeVerticalLinearStepper: React.FC = () => {
                     onClick={handleNext}
                     className={classes.button}
                   >
-                    {activeStep === mergeSteps.length - 1 ? 'Terminé' : 'Suivant'}
+                    {activeStep === mergeSteps.length - 1
+                      ? 'Terminé'
+                      : 'Suivant'}
                   </Button>
                 </div>
               </div>
