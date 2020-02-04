@@ -9,7 +9,7 @@ const hotfixSteps: string[] = [
 
 export default hotfixSteps;
 
-export function getHotFixStepContent(step: number): string {
+export function getHotfixStepContent(step: number): string {
   switch (step) {
     case 0:
       return 'checkout sur le commit de prod';

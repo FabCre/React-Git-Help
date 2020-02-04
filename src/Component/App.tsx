@@ -1,12 +1,15 @@
-import React from 'react';
-import './App.scss';
 import 'typeface-roboto';
-import SearchAppBar from './SearchAppBar';
+import React from 'react';
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
+
+import SearchAppBar  from './SearchAppBar';
 import GitConfig from './GitConfig';
 import CommandTable from './CommandTable';
-import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
-import RebaseVerticalLinearStepper from './RebaseVerticalLinearStepper';
 import MergeVerticalLinearStepper from './MergeVerticalLinearStepper';
+import HotfixVerticalLinearStepper from './HotfixVerticalLInearStepper';
+import RebaseVerticalLinearStepper from './RebaseVerticalLinearStepper';
+
+import './App.scss';
 
 const theme = createMuiTheme({
   overrides: {
@@ -24,11 +27,13 @@ const theme = createMuiTheme({
   },
 });
 
+export type MenuCategory = 'Merge Process' | 'Rebase Process' | 'HotFix Process' | 'GitConfig' | 'Command';
+
 const App: React.FC = () => {
-  const [category, setCategory] = React.useState<string>('Command');
+  const [category, setCategory] = React.useState<MenuCategory>('Command');
 
   const onCategoryChoose = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setCategory(event.currentTarget.innerText);
+    setCategory(event.currentTarget.innerText as MenuCategory);
   };
 
   const [searchValue, setSearchValue] = React.useState<string | null>(null);
@@ -51,6 +56,7 @@ const App: React.FC = () => {
         {category === 'Command' && <CommandTable searchValue={searchValue} />}
         {category === 'Rebase Process' && <RebaseVerticalLinearStepper />}
         {category === 'Merge Process' && <MergeVerticalLinearStepper />}
+        {category === 'HotFix Process' && <HotfixVerticalLinearStepper />}
       </MuiThemeProvider>
     </div>
   );

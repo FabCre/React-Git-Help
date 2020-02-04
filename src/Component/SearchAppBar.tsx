@@ -3,7 +3,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
-import MenuButton from './MenuButton';
 import SearchIcon from '@material-ui/icons/Search';
 import {
   createStyles,
@@ -11,6 +10,9 @@ import {
   Theme,
   makeStyles,
 } from '@material-ui/core/styles';
+
+import MenuButton from './MenuButton';
+import { MenuCategory } from './App';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -73,7 +75,7 @@ type SearchAppBarType = React.FC<{
   searchChange: (
     event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>,
   ) => void;
-  category: string;
+  category: MenuCategory;
 }>;
 
 const SearchAppBar: SearchAppBarType = ({

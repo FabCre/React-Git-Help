@@ -75,6 +75,14 @@ const MenuButton: React.FC = ({ children: chooseCategory }: any) => {
             handleClose();
           }}
         >
+          HotFix Process
+        </MenuItem>
+        <MenuItem
+          onClick={event => {
+            chooseCategory(event);
+            handleClose();
+          }}
+        >
           GitConfig
         </MenuItem>
       </Menu>
