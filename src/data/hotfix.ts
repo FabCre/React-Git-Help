@@ -1,10 +1,11 @@
 const hotfixSteps: string[] = [
-  'checkout sur le commit de prod',
-  'créer une branche à partir de la derniere version en prod, nom de la branche sous cette forme hotfix/letrucfixé',
-  'commit',
-  'via le système de déploiement (deployit) déployer la branhce en uat puis vérifier avant la mise en prod',
-  'via deploy it mettre en prod cette nouvelle branche comprennant la prod actuelle plus le commit de fix',
-  'a la suite du hotfix, mettre le commit sur la branche master en faisant un cherry pick depuis master du hotfix pour avoir la branche master a jour avec ce hotfix inclus',
+  'git checkout master',
+  'git checkout [hashDuCommit]',
+  'git checkout -b hotfix/leBugAFixer',
+  'git commit',
+  'déployer en preprod la branche hotfix et effectuer des tests',
+  'déployer en prodcution la branche hotfix et tester',
+  'git cherry-pick [hashDuCommit]',
 ];
 
 export default hotfixSteps;
@@ -12,7 +13,19 @@ export default hotfixSteps;
 export function getHotfixStepContent(step: number): string {
   switch (step) {
     case 0:
-      return 'checkout sur le commit de prod';
+      return 'Se rendre sur la branche de production';
+    case 1:
+      return 'Se rendre sur le commit actuel de la production pour se mettre à un état équivalent';
+    case 2:
+      return 'Créer une branche à partir de la dernière version en prod, nom de la branche sous cette forme: [hotfix/leBugAFixer]';
+    case 3:
+      return 'Commiter le fix';
+    case 4:
+      return 'Via le système de déploiement (deployit) déployer la branche en uat puis vérifier avant la mise en prod';
+    case 5:
+      return 'Via le système de déploiement, effectuer une mise en production de cette nouvelle branche comprennant la production actuelle plus le commit de fix';
+    case 6:
+      return 'Depuis la branche master, cherry pick du hotfix pour avoir la branche master à jour avec le hotfix inclus';
     default:
       return 'Etape inconnue';
   }
