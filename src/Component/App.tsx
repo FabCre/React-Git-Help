@@ -6,7 +6,7 @@ import SearchAppBar  from './SearchAppBar';
 import GitConfig from './GitConfig';
 import CommandTable from './CommandTable';
 import MergeVerticalLinearStepper from './MergeVerticalLinearStepper';
-import HotfixVerticalLinearStepper from './HotfixVerticalLInearStepper';
+import HotfixVerticalLinearStepper from './HotfixVerticalLinearStepper';
 import RebaseVerticalLinearStepper from './RebaseVerticalLinearStepper';
 
 import './App.scss';
