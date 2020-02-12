@@ -5,9 +5,9 @@ import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
 import SearchAppBar  from './SearchAppBar';
 import GitConfig from './GitConfig';
 import CommandTable from './CommandTable';
-import MergeVerticalLinearStepper from './MergeVerticalLinearStepper';
-import HotfixVerticalLinearStepper from './HotfixVerticalLinearStepper';
-import RebaseVerticalLinearStepper from './RebaseVerticalLinearStepper';
+import MergeVerticalLinearStepper from './Process/MergeVerticalLinearStepper';
+import HotfixVerticalLinearStepper from './Process/HotfixVerticalLinearStepper';
+import RebaseVerticalLinearStepper from './Process/RebaseVerticalLinearStepper';
 
 import './App.scss';
 

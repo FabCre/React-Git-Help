@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 
-import rebaseSteps, { getRebaseStepContent } from '../data/rebase';
+import rebaseSteps, { getRebaseStepContent } from '../../data/rebase';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -22,12 +22,12 @@ const useStyles = makeStyles((theme: Theme) =>
       marginRight: theme.spacing(1),
     },
     actionsContainer: {
-        fontSize: 'smaller',
-        padding: '1px 7px',
+      fontSize: 'smaller',
+      padding: '1px 7px',
       marginBottom: theme.spacing(2),
     },
     resetContainer: {
-        fontSize: 'smaller',
+      fontSize: 'smaller',
       padding: theme.spacing(3),
     },
   }),

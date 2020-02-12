@@ -11,6 +11,10 @@ const useStyles = makeStyles((theme: Theme) =>
       margin: '1em',
       padding: theme.spacing(2, 2),
     },
+    textarea: {
+      width: '100%',
+      height: '10em',
+    },
   }),
 );
 
@@ -26,9 +30,9 @@ const GitConfig: React.FC = () => {
         <Typography component="p">Sur Linux: ~/.gitconfig</Typography>
         <Typography component="p">Sur Windows: C:\Users\YourName</Typography>
         <Typography component="p">Config simple:</Typography>
-        <textarea defaultValue={simpleConfig} />
+        <textarea className={classes.textarea} defaultValue={simpleConfig} />
         <Typography component="p">Config @porteneuve:</Typography>
-        <textarea defaultValue={advancedConfig} />
+        <textarea className={classes.textarea} defaultValue={advancedConfig} />
       </Paper>
     </div>
   );
