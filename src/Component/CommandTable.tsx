@@ -42,7 +42,7 @@ const CommandTable: CommandTable = ({ searchValue }) => {
         </TableHead>
         <TableBody>
           {cmdTable
-            .filter(cmd => (searchValue ? cmd.cmd.includes(searchValue) : cmd))
+            .filter(cmd => (searchValue ? cmd.cmd.includes(searchValue) : true))
             .map(cmd => (
               <TableRow key={cmd.cmd}>
                 <TableCell component="th" scope="row" className={classes.cmd}>
