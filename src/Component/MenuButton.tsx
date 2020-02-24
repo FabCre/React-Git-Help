@@ -13,7 +13,15 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const MenuButton: React.FC = ({ children: chooseCategory }: any) => {
+interface MenuButtonOwnProps {
+  chooseCategory: (
+    event: React.MouseEvent<HTMLLIElement, MouseEvent>,
+  ) => void;
+}
+
+type MenuButtonProps = MenuButtonOwnProps;
+
+const MenuButton: React.FC<MenuButtonProps> = ({ chooseCategory }) => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 

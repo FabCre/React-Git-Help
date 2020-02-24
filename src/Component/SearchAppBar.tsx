@@ -71,7 +71,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 type SearchAppBarType = React.FC<{
-  chooseCategory: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  chooseCategory: (event: React.MouseEvent<HTMLLIElement>) => void;
   searchChange: (
     event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>,
   ) => void;
@@ -89,7 +89,7 @@ const SearchAppBar: SearchAppBarType = ({
     <div className={classes.root}>
       <AppBar position="static" color="inherit">
         <Toolbar>
-          <MenuButton children={chooseCategory} />
+          <MenuButton chooseCategory={chooseCategory} />
           <Typography className={classes.title} variant="h4" noWrap>
             Git Help {category ? category : null}
           </Typography>

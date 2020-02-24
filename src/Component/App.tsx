@@ -32,7 +32,7 @@ export type MenuCategory = 'Merge Process' | 'Rebase Process' | 'HotFix Process'
 const App: React.FC = () => {
   const [category, setCategory] = React.useState<MenuCategory>('Command');
 
-  const onCategoryChoose = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const onCategoryChoose = (event: React.MouseEvent<HTMLLIElement>) => {
     setCategory(event.currentTarget.innerText as MenuCategory);
   };
 

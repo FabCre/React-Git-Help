@@ -167,6 +167,15 @@ const cmdTable: Command[] = [
     desc:
       'Permet de synchroniser les branches et les commits entre le local et le remote.',
   },
+  {
+    cmd: 'git fetch',
+    desc: 'Permet de synchroniser le local et le remote.',
+  },
+  {
+    cmd: 'git cherry-pick [hash du commit]',
+    desc:
+      'Permet de synchroniser les branches et les commits entre le local et le remote.',
+  },
 ];
 
 export default cmdTable;
