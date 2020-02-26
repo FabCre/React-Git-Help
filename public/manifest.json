@@ -1,6 +1,6 @@
 {
-  "short_name": "Simple React App",
-  "name": "A simple React App",
+  "short_name": "React Git Help Application",
+  "name": "A React Application to help on git command and process.",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",

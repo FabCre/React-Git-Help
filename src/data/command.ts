@@ -4,7 +4,9 @@ export interface Command {
   exemple?: string;
 }
 
-const cmdTable: Command[] = [
+type CommandTable = Command[]
+
+const cmdTable: CommandTable = [
   {
     cmd: 'git init',
     desc:

@@ -70,15 +70,17 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-type SearchAppBarType = React.FC<{
+interface SearchAppBarOwnProps {
   chooseCategory: (event: React.MouseEvent<HTMLLIElement>) => void;
   searchChange: (
     event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>,
   ) => void;
   category: MenuCategory;
-}>;
+}
 
-const SearchAppBar: SearchAppBarType = ({
+type SearchAppBarType = SearchAppBarOwnProps;
+
+const SearchAppBar: React.FC<SearchAppBarType> = ({
   chooseCategory,
   searchChange,
   category,

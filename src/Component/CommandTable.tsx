@@ -25,9 +25,13 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-type CommandTable = React.FC<{ searchValue: string | null }>;
+interface CommandTableOwnProps {
+  searchValue: string | null
+}
 
-const CommandTable: CommandTable = ({ searchValue }) => {
+type CommandTableProps = CommandTableOwnProps;
+
+const CommandTable: React.FC<CommandTableProps> = ({ searchValue }) => {
   const classes = useStyles();
 
   return (
