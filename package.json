@@ -18,7 +18,7 @@
     "@types/react-dom": "latest",
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
-    "eslint": "latest",
+    "eslint": "6.6.0",
     "eslint-config-prettier": "latest",
     "eslint-plugin-prettier": "latest",
     "node-sass": "latest",
