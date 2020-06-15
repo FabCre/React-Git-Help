@@ -4,7 +4,7 @@ export interface Command {
   exemple?: string;
 }
 
-type CommandTable = Command[]
+type CommandTable = Command[];
 
 const cmdTable: CommandTable = [
   {
