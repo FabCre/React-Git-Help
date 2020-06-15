@@ -167,7 +167,12 @@ const cmdTable: CommandTable = [
   {
     cmd: 'git fetch --prune',
     desc:
-      'Permet de synchroniser les branches et les commits entre le local et le remote.',
+      'Permet de synchroniser la branche et les commits entre le local et le remote.',
+  },
+  {
+    cmd: 'git fetch --all',
+    desc:
+      'Permet de synchroniser toutes les branches et les commits entre le local et le remote.',
   },
   {
     cmd: 'git fetch',

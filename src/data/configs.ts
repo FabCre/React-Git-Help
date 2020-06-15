@@ -3,6 +3,8 @@ export const simpleConfig = `[user]
         email = mail@mail.fr
 [push]
         default = simple
+[pull]
+        rebase = true
 [color]
         ui = true
 [alias]
@@ -12,6 +14,7 @@ export const simpleConfig = `[user]
   co = checkout
   ci = commit
   br = branch
+  stashpull = !git stash && git pull && git stash pop
   amend = commit --amend
   undo = git reset --soft HEAD^
   addu = add -u # stages modified & deleted ("git add ." stages new & modified)
@@ -88,9 +91,6 @@ export const advancedConfig = `[user]
   # This is GREAT… when you know what you're doing and are careful
   # not to pull --no-rebase over a local line containing a true merge.
   # rebase = true
-  # WARNING! This option, which does away with the one gotcha of
-  # auto-rebasing on pulls, is only available from 1.8.5 onwards.
-  rebase = preserve
 [push]
   # Default push should only push the current branch to its push target, regardless of its remote name
   default = upstream
