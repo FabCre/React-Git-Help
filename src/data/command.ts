@@ -15,7 +15,7 @@ const cmdTable: CommandTable = [
       "Nouveau projet Git local à partir d'un dossier local. Si on veut ensuite le partager sur GitHub, il faudra alors paramétrer le remote",
   },
   {
-    cmd: 'git clone [depotACloner]',
+    cmd: 'git clone [dépot a cloner]',
     desc:
       'Clone un dépot sur la machine dans le dossier où la command est lancée.',
     exemple:
@@ -39,7 +39,7 @@ const cmdTable: CommandTable = [
     exemple: 'On peut préciser une commande particulière "git branch -help"',
   },
   {
-    cmd: 'git remote add origin [adresseDuRemote]',
+    cmd: 'git remote add origin [adresse du remote]',
     desc: 'Créé et ajoute une nouvelle remote "origin" à l\'adresse indiqué.',
     exemple: 'git remote add origin git@github.com:FabCre/test.github',
   },
@@ -55,6 +55,7 @@ const cmdTable: CommandTable = [
   {
     cmd: 'git log',
     desc: "Voir l'historique des commits.",
+    exemple: 'git log -7 permet de voir les 7 dernier commits',
   },
   {
     cmd: 'git show',
@@ -73,26 +74,26 @@ const cmdTable: CommandTable = [
       'Permet de modifier sur le titre et/ou la description du dernier commit en local.',
   },
   {
-    cmd: 'git branch [nomDeLaBranche]',
+    cmd: 'git branch [nom de la branche]',
     desc: 'Crée une nouvelle branche à partir de la branche et commit courant.',
   },
   {
-    cmd: 'git checkout [nomDeLaBranche]',
+    cmd: 'git checkout [nom de la branche]',
     desc: 'Permet de se rendre sur la branche nommée.',
   },
   {
-    cmd: 'git merge [nomDeLaBranche]',
+    cmd: 'git merge [nom de la branche]',
     desc:
       'Effectue un merge sur la branche principale, nécessite de résoudre les conflits.',
   },
   {
-    cmd: 'git branch -d [nomDeLaBranche]',
+    cmd: 'git branch -d [nom de la branche]',
     desc: 'Supprime la branch sur le local.',
     exemple:
       'On peut ajouter le flag -f pour supprimer la branche avec des changements non mergés.',
   },
   {
-    cmd: 'git push origin --delete [nomDeLaBranche]',
+    cmd: 'git push origin --delete [nom de la branche]',
     desc: 'Supprime la branch distante.',
   },
   {
@@ -114,7 +115,7 @@ const cmdTable: CommandTable = [
     desc: 'Affiche la liste des brouillons présent sur le local.',
   },
   {
-    cmd: 'git stash drop stash@{[identifiantDuStash]}',
+    cmd: 'git stash drop stash@{[identifiant du stash]}',
     desc: 'Supprime le stash identifier',
     exemple: 'git stash drop stash@{0}',
   },
@@ -131,7 +132,7 @@ const cmdTable: CommandTable = [
     exemple: 'git pull adresse.git',
   },
   {
-    cmd: 'git add [fichierAAjouterdDansLeCommit]',
+    cmd: 'git add [fichier a ajouter dans le commit]',
     desc:
       'Ajoute le fichier nommée, mettre un espace entre chaque fichier à ajouter au comit. En utilisant le git add . tout est ajouté dans le commit.',
   },
@@ -150,12 +151,12 @@ const cmdTable: CommandTable = [
       "Ouvre l'éditeur de texte et permet de taper un titre de commit suivi d'un message. Attention, le titre et le message doivent être séparé par une ligne vide.",
   },
   {
-    cmd: 'git commit -m [Titre du commit]',
+    cmd: 'git commit -m [titre du commit]',
     desc:
       'Commande de raccourci pour effectuer un commit mais ne permet pas de laisser de message de commit.',
   },
   {
-    cmd: 'git rebase',
+    cmd: 'git rebase [nom de la branche]',
     desc: 'Applique les commits au dessus des autres commits.',
     exemple: 'Se référer au rebase process.',
   },
@@ -181,7 +182,11 @@ const cmdTable: CommandTable = [
   {
     cmd: 'git cherry-pick [hash du commit]',
     desc:
-      'Permet de synchroniser les branches et les commits entre le local et le remote.',
+      "Permet d'effectuer un rebase interactive avec un seul commit d'une autre branche.",
+  },
+  {
+    cmd: 'git revert [hash du commit]',
+    desc: "Permet de créer un commit de revert afin d'annuler son contenu.",
   },
 ];
 

@@ -2,7 +2,7 @@ import 'typeface-roboto';
 import React from 'react';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
 
-import SearchAppBar  from './SearchAppBar';
+import SearchAppBar from './SearchAppBar';
 import GitConfig from './GitConfig';
 import CommandTable from './CommandTable';
 import MergeVerticalLinearStepper from './Process/MergeVerticalLinearStepper';
@@ -16,7 +16,7 @@ const theme = createMuiTheme({
     MuiAppBar: {
       root: {
         backgroundColor: 'darkorchid',
-        color: 'white',
+        color: 'white !important',
       },
     },
     MuiPaper: {
@@ -27,7 +27,12 @@ const theme = createMuiTheme({
   },
 });
 
-export type MenuCategory = 'Merge Process' | 'Rebase Process' | 'HotFix Process' | 'GitConfig' | 'Command';
+export type MenuCategory =
+  | 'Merge Process'
+  | 'Rebase Process'
+  | 'HotFix Process'
+  | 'GitConfig'
+  | 'Command';
 
 const App: React.FC = () => {
   const [category, setCategory] = React.useState<MenuCategory>('Command');

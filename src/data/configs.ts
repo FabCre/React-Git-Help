@@ -16,7 +16,7 @@ export const simpleConfig = `[user]
   br = branch
   stashpull = !git stash && git pull && git stash pop
   amend = commit --amend
-  undo = git reset --soft HEAD^
+  undo = git reset --mixed HEAD^
   addu = add -u # stages modified & deleted ("git add ." stages new & modified)
   adda = add -A # stages ALL`;
 
