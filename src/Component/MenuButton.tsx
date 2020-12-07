@@ -43,13 +43,7 @@ const MenuButton: React.FC<MenuButtonProps> = ({ chooseCategory }) => {
       >
         <MenuIcon />
       </IconButton>
-      <Menu
-        id="simple-menu"
-        anchorEl={anchorEl}
-        keepMounted
-        open={Boolean(anchorEl)}
-        onClose={handleClose}
-      >
+      <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
         <MenuItem
           onClick={(event) => {
             chooseCategory(event);

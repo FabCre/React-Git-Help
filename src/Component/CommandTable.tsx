@@ -53,7 +53,7 @@ const CommandTable: React.FC<CommandTableProps> = ({ searchValue }) => {
                   {cmd.cmd}
                 </TableCell>
                 <TableCell align="left">{cmd.desc}</TableCell>
-                <TableCell align="left">{cmd.exemple}</TableCell>
+                <TableCell align="left">{cmd.example}</TableCell>
               </TableRow>
             ))}
         </TableBody>

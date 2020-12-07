@@ -1,7 +1,7 @@
 export interface Command {
   cmd: string;
   desc: string;
-  exemple?: string;
+  example?: string;
 }
 
 type CommandTable = Command[];
@@ -10,33 +10,33 @@ const cmdTable: CommandTable = [
   {
     cmd: 'git init',
     desc: 'Initialise un nouveau dépot sur la machine dans le dossier où la command est lancée.',
-    exemple:
+    example:
       "Nouveau projet Git local à partir d'un dossier local. Si on veut ensuite le partager sur GitHub, il faudra alors paramétrer le remote",
   },
   {
     cmd: 'git clone [dépot a cloner]',
     desc: 'Clone un dépot sur la machine dans le dossier où la command est lancée.',
-    exemple: 'Attention à la confgiuration de git: clé ssh et droit sur le dépot distant.',
+    example: 'Attention à la confgiuration de git: clé ssh et droit sur le dépot distant.',
   },
   {
     cmd: 'git status',
     desc: "Récapitule l'état local (workspace et index) des fichiers (par rapport au repo récupéré).",
-    exemple: "En rouge : modifié mais non pris en compte (= en workspace), en vert : modifié et pris en compte (= ajouté à l'index).",
+    example: "En rouge : modifié mais non pris en compte (= en workspace), en vert : modifié et pris en compte (= ajouté à l'index).",
   },
   {
     cmd: 'git --help [command]',
     desc: 'Renvoi au manuel de la commande.',
-    exemple: 'On peut préciser une commande particulière "git --help branch"',
+    example: 'On peut préciser une commande particulière "git --help branch"',
   },
   {
     cmd: 'git [command] -help',
     desc: 'Renvoi la liste des commandes disponibles.',
-    exemple: 'On peut préciser une commande particulière "git branch -help"',
+    example: 'On peut préciser une commande particulière "git branch -help"',
   },
   {
     cmd: 'git remote add origin [adresse du remote]',
     desc: 'Créé et ajoute une nouvelle remote "origin" à l\'adresse indiqué.',
-    exemple: 'git remote add origin git@github.com:FabCre/test.github',
+    example: 'git remote add origin git@github.com:FabCre/test.github',
   },
   {
     cmd: 'git push -u origin master',
@@ -49,21 +49,22 @@ const cmdTable: CommandTable = [
   {
     cmd: 'git log',
     desc: "Voir l'historique des commits.",
-    exemple: 'git log -7 permet de voir les 7 dernier commits',
+    example: 'git log -7 permet de voir les 7 dernier commits',
   },
   {
     cmd: 'git show',
     desc: "Voir l'intégralité du commit dans le terminal.",
-    exemple: 'git show + 7 premiers caractères du hash du commit',
+    example: 'git show + 7 premiers caractères du hash du commit',
   },
   {
     cmd: 'git diff',
     desc: 'Affiche les modifications depuis le dernier commit dans le local.',
-    exemple: 'Pn peut ajouter le flag -w pour faire le diff sans les whitespace, indentations...',
+    example: 'On peut ajouter le flag -w pour faire le diff sans les whitespace, indentations...',
   },
   {
     cmd: 'git commit --amend',
-    desc: 'Permet de modifier sur le titre et/ou la description du dernier commit en local.',
+    desc: 'Permet de modifier le dernier commit en local, seuls les éléments staged sont ajoutés au commit amendé.',
+    example: 'En ajoutant le --no-edit en flag, cela permet de conserver le message du commit amendé.',
   },
   {
     cmd: 'git branch [nom de la branche]',
@@ -80,7 +81,7 @@ const cmdTable: CommandTable = [
   {
     cmd: 'git branch -d [nom de la branche]',
     desc: 'Supprime la branch sur le local.',
-    exemple: 'On peut ajouter le flag -f pour supprimer la branche avec des changements non mergés.',
+    example: 'On peut ajouter le flag -f pour supprimer la branche avec des changements non mergés.',
   },
   {
     cmd: 'git push origin --delete [nom de la branche]',
@@ -105,18 +106,18 @@ const cmdTable: CommandTable = [
   {
     cmd: 'git stash drop stash@{[identifiant du stash]}',
     desc: 'Supprime le stash identifier',
-    exemple: 'git stash drop stash@{0}',
+    example: 'git stash drop stash@{0}',
   },
   {
     cmd: 'git push',
     desc: "Envoi les commits vers le repo distant, on peut identifier explicitement l'adresse de l'envoi.",
-    exemple: 'git push origin/master',
+    example: 'git push origin/master',
   },
   {
     cmd: 'git pull',
     desc:
       "Recupère les derniers commits, le git pull effectue par défaut un fetch puis un merge, il est préférable d'utiliser le flag --rebase afin de placer son travail en tête de branche",
-    exemple: 'git pull adresse.git',
+    example: 'git pull adresse.git',
   },
   {
     cmd: 'git add [fichier a ajouter dans le commit]',
@@ -144,7 +145,7 @@ const cmdTable: CommandTable = [
   {
     cmd: 'git rebase [nom de la branche]',
     desc: 'Applique les commits au dessus des autres commits.',
-    exemple: 'Se référer au rebase process.',
+    example: 'Se référer au rebase process.',
   },
   {
     cmd: 'git rebase --interactive',
