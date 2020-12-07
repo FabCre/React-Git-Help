@@ -27,12 +27,7 @@ const theme = createMuiTheme({
   },
 });
 
-export type MenuCategory =
-  | 'Merge Process'
-  | 'Rebase Process'
-  | 'HotFix Process'
-  | 'GitConfig'
-  | 'Command';
+export type MenuCategory = 'Merge Process' | 'Rebase Process' | 'HotFix Process' | 'GitConfig' | 'Command';
 
 const App: React.FC = () => {
   const [category, setCategory] = React.useState<MenuCategory>('Command');
@@ -43,20 +38,14 @@ const App: React.FC = () => {
 
   const [searchValue, setSearchValue] = React.useState<string | null>(null);
 
-  const onSearchChange = (
-    event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>,
-  ) => {
+  const onSearchChange = (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
     setSearchValue(event.target.value);
   };
 
   return (
     <div className="root">
       <MuiThemeProvider theme={theme}>
-        <SearchAppBar
-          chooseCategory={onCategoryChoose}
-          searchChange={onSearchChange}
-          category={category}
-        />
+        <SearchAppBar chooseCategory={onCategoryChoose} searchChange={onSearchChange} category={category} />
         {category === 'GitConfig' && <GitConfig />}
         {category === 'Command' && <CommandTable searchValue={searchValue} />}
         {category === 'Rebase Process' && <RebaseVerticalLinearStepper />}

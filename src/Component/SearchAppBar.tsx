@@ -4,12 +4,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
-import {
-  createStyles,
-  fade,
-  Theme,
-  makeStyles,
-} from '@material-ui/core/styles';
+import { createStyles, fade, Theme, makeStyles } from '@material-ui/core/styles';
 
 import MenuButton from './MenuButton';
 import { MenuCategory } from './App';
@@ -72,19 +67,13 @@ const useStyles = makeStyles((theme: Theme) =>
 
 interface SearchAppBarOwnProps {
   chooseCategory: (event: React.MouseEvent<HTMLLIElement>) => void;
-  searchChange: (
-    event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>,
-  ) => void;
+  searchChange: (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => void;
   category: MenuCategory;
 }
 
 type SearchAppBarType = SearchAppBarOwnProps;
 
-const SearchAppBar: React.FC<SearchAppBarType> = ({
-  chooseCategory,
-  searchChange,
-  category,
-}) => {
+const SearchAppBar: React.FC<SearchAppBarType> = ({ chooseCategory, searchChange, category }) => {
   const classes = useStyles();
 
   return (
@@ -107,7 +96,7 @@ const SearchAppBar: React.FC<SearchAppBarType> = ({
                   input: classes.inputInput,
                 }}
                 inputProps={{ 'aria-label': 'search' }}
-                onChange={event => searchChange(event)}
+                onChange={(event) => searchChange(event)}
               />
             </div>
           )}

@@ -14,9 +14,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 interface MenuButtonOwnProps {
-  chooseCategory: (
-    event: React.MouseEvent<HTMLLIElement, MouseEvent>,
-  ) => void;
+  chooseCategory: (event: React.MouseEvent<HTMLLIElement, MouseEvent>) => void;
 }
 
 type MenuButtonProps = MenuButtonOwnProps;
@@ -45,7 +43,6 @@ const MenuButton: React.FC<MenuButtonProps> = ({ chooseCategory }) => {
       >
         <MenuIcon />
       </IconButton>
-
       <Menu
         id="simple-menu"
         anchorEl={anchorEl}
@@ -54,7 +51,7 @@ const MenuButton: React.FC<MenuButtonProps> = ({ chooseCategory }) => {
         onClose={handleClose}
       >
         <MenuItem
-          onClick={event => {
+          onClick={(event) => {
             chooseCategory(event);
             handleClose();
           }}
@@ -62,7 +59,7 @@ const MenuButton: React.FC<MenuButtonProps> = ({ chooseCategory }) => {
           Command
         </MenuItem>
         <MenuItem
-          onClick={event => {
+          onClick={(event) => {
             chooseCategory(event);
             handleClose();
           }}
@@ -70,7 +67,7 @@ const MenuButton: React.FC<MenuButtonProps> = ({ chooseCategory }) => {
           Rebase Process
         </MenuItem>
         <MenuItem
-          onClick={event => {
+          onClick={(event) => {
             chooseCategory(event);
             handleClose();
           }}
@@ -78,7 +75,7 @@ const MenuButton: React.FC<MenuButtonProps> = ({ chooseCategory }) => {
           Merge Process
         </MenuItem>
         <MenuItem
-          onClick={event => {
+          onClick={(event) => {
             chooseCategory(event);
             handleClose();
           }}
@@ -86,7 +83,7 @@ const MenuButton: React.FC<MenuButtonProps> = ({ chooseCategory }) => {
           HotFix Process
         </MenuItem>
         <MenuItem
-          onClick={event => {
+          onClick={(event) => {
             chooseCategory(event);
             handleClose();
           }}

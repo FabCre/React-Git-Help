@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
+import { createStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -9,7 +9,7 @@ import Paper from '@material-ui/core/Paper';
 
 import cmdTable from '../data/command';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
   createStyles({
     root: {
       margin: '1em',

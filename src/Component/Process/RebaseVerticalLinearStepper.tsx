@@ -38,11 +38,11 @@ const RebaseVerticalLinearStepper: React.FC = () => {
   const [activeStep, setActiveStep] = React.useState(0);
 
   const handleNext = () => {
-    setActiveStep(prevActiveStep => prevActiveStep + 1);
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
 
   const handleBack = () => {
-    setActiveStep(prevActiveStep => prevActiveStep - 1);
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
   const handleReset = () => {
@@ -59,22 +59,11 @@ const RebaseVerticalLinearStepper: React.FC = () => {
               <Typography>{getRebaseStepContent(index)}</Typography>
               <div className={classes.actionsContainer}>
                 <div>
-                  <Button
-                    disabled={activeStep === 0}
-                    onClick={handleBack}
-                    className={classes.button}
-                  >
+                  <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>
                     Précedent
                   </Button>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={handleNext}
-                    className={classes.button}
-                  >
-                    {activeStep === rebaseSteps.length - 1
-                      ? 'Terminé'
-                      : 'Suivant'}
+                  <Button variant="contained" color="primary" onClick={handleNext} className={classes.button}>
+                    {activeStep === rebaseSteps.length - 1 ? 'Terminé' : 'Suivant'}
                   </Button>
                 </div>
               </div>

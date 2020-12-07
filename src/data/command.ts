@@ -9,24 +9,19 @@ type CommandTable = Command[];
 const cmdTable: CommandTable = [
   {
     cmd: 'git init',
-    desc:
-      'Initialise un nouveau dépot sur la machine dans le dossier où la command est lancée.',
+    desc: 'Initialise un nouveau dépot sur la machine dans le dossier où la command est lancée.',
     exemple:
       "Nouveau projet Git local à partir d'un dossier local. Si on veut ensuite le partager sur GitHub, il faudra alors paramétrer le remote",
   },
   {
     cmd: 'git clone [dépot a cloner]',
-    desc:
-      'Clone un dépot sur la machine dans le dossier où la command est lancée.',
-    exemple:
-      'Attention à la confgiuration de git: clé ssh et droit sur le dépot distant.',
+    desc: 'Clone un dépot sur la machine dans le dossier où la command est lancée.',
+    exemple: 'Attention à la confgiuration de git: clé ssh et droit sur le dépot distant.',
   },
   {
     cmd: 'git status',
-    desc:
-      "Récapitule l'état local (workspace et index) des fichiers (par rapport au repo récupéré).",
-    exemple:
-      "En rouge : modifié mais non pris en compte (= en workspace), en vert : modifié et pris en compte (= ajouté à l'index).",
+    desc: "Récapitule l'état local (workspace et index) des fichiers (par rapport au repo récupéré).",
+    exemple: "En rouge : modifié mais non pris en compte (= en workspace), en vert : modifié et pris en compte (= ajouté à l'index).",
   },
   {
     cmd: 'git --help [command]',
@@ -45,8 +40,7 @@ const cmdTable: CommandTable = [
   },
   {
     cmd: 'git push -u origin master',
-    desc:
-      'Le flag -u permet de sauvegarder les paramêtres dans le .git pour les prochains push.',
+    desc: 'Le flag -u permet de sauvegarder les paramêtres dans le .git pour les prochains push.',
   },
   {
     cmd: 'git remote -v',
@@ -65,13 +59,11 @@ const cmdTable: CommandTable = [
   {
     cmd: 'git diff',
     desc: 'Affiche les modifications depuis le dernier commit dans le local.',
-    exemple:
-      'Pn peut ajouter le flag -w pour faire le diff sans les whitespace, indentations...',
+    exemple: 'Pn peut ajouter le flag -w pour faire le diff sans les whitespace, indentations...',
   },
   {
     cmd: 'git commit --amend',
-    desc:
-      'Permet de modifier sur le titre et/ou la description du dernier commit en local.',
+    desc: 'Permet de modifier sur le titre et/ou la description du dernier commit en local.',
   },
   {
     cmd: 'git branch [nom de la branche]',
@@ -83,14 +75,12 @@ const cmdTable: CommandTable = [
   },
   {
     cmd: 'git merge [nom de la branche]',
-    desc:
-      'Effectue un merge sur la branche principale, nécessite de résoudre les conflits.',
+    desc: 'Effectue un merge sur la branche principale, nécessite de résoudre les conflits.',
   },
   {
     cmd: 'git branch -d [nom de la branche]',
     desc: 'Supprime la branch sur le local.',
-    exemple:
-      'On peut ajouter le flag -f pour supprimer la branche avec des changements non mergés.',
+    exemple: 'On peut ajouter le flag -f pour supprimer la branche avec des changements non mergés.',
   },
   {
     cmd: 'git push origin --delete [nom de la branche]',
@@ -98,8 +88,7 @@ const cmdTable: CommandTable = [
   },
   {
     cmd: 'git stash',
-    desc:
-      'Met en brouillon les dernières modifications depuis le dernier commit dans le local.',
+    desc: 'Met en brouillon les dernières modifications depuis le dernier commit dans le local.',
   },
   {
     cmd: 'git stash pop',
@@ -107,8 +96,7 @@ const cmdTable: CommandTable = [
   },
   {
     cmd: 'git stash apply',
-    desc:
-      'Applique ce qui à été ajouté en brouillon sans le supprimer du brouillon.',
+    desc: 'Applique ce qui à été ajouté en brouillon sans le supprimer du brouillon.',
   },
   {
     cmd: 'git stash list',
@@ -121,8 +109,7 @@ const cmdTable: CommandTable = [
   },
   {
     cmd: 'git push',
-    desc:
-      "Envoi les commits vers le repo distant, on peut identifier explicitement l'adresse de l'envoi.",
+    desc: "Envoi les commits vers le repo distant, on peut identifier explicitement l'adresse de l'envoi.",
     exemple: 'git push origin/master',
   },
   {
@@ -152,8 +139,7 @@ const cmdTable: CommandTable = [
   },
   {
     cmd: 'git commit -m [titre du commit]',
-    desc:
-      'Commande de raccourci pour effectuer un commit mais ne permet pas de laisser de message de commit.',
+    desc: 'Commande de raccourci pour effectuer un commit mais ne permet pas de laisser de message de commit.',
   },
   {
     cmd: 'git rebase [nom de la branche]',
@@ -162,18 +148,15 @@ const cmdTable: CommandTable = [
   },
   {
     cmd: 'git rebase --interactive',
-    desc:
-      'Permet de reword, fixup, saquash ou autre sur les commits qui ne sont pas encore push sur le remote.',
+    desc: 'Permet de reword, fixup, saquash ou autre sur les commits qui ne sont pas encore push sur le remote.',
   },
   {
     cmd: 'git fetch --prune',
-    desc:
-      'Permet de synchroniser la branche et les commits entre le local et le remote.',
+    desc: 'Permet de synchroniser la branche et les commits entre le local et le remote.',
   },
   {
     cmd: 'git fetch --all',
-    desc:
-      'Permet de synchroniser toutes les branches et les commits entre le local et le remote.',
+    desc: 'Permet de synchroniser toutes les branches et les commits entre le local et le remote.',
   },
   {
     cmd: 'git fetch',
@@ -181,8 +164,7 @@ const cmdTable: CommandTable = [
   },
   {
     cmd: 'git cherry-pick [hash du commit]',
-    desc:
-      "Permet d'effectuer un rebase interactive avec un seul commit d'une autre branche.",
+    desc: "Permet d'effectuer un rebase interactive avec un seul commit d'une autre branche.",
   },
   {
     cmd: 'git revert [hash du commit]',
