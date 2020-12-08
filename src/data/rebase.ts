@@ -27,9 +27,9 @@ export function getRebaseStepContent(step: number): string {
     case 3:
       return `Attention, cette commande est à effectuer seulement si du travail a été commencé sur master.`;
     case 4:
-      return `Effectuer un merge en fast forward`;
+      return `Effectuer un merge en fast forward only.`;
     case 5:
-      return `Effectuer un rebase interactive depuis le commit, dans le rebase "pick" le premier commit dans l'ordre chronologique et "fixup" les autres commits (idem que squash mais sans la modification du message) puis save les changements.`;
+      return `Effectuer un rebase interactive depuis le commit, dans le rebase "pick" le premier commit dans l'ordre chronologique et "fixup" les autres commits (idem que squash mais sans la modification du message) puis sauvegarder les changements.`;
     case 6:
       return `Effectuer un log afin de vérifier le bon déroulement avant de push.`;
     case 7:
@@ -45,6 +45,6 @@ export function getRebaseStepContent(step: number): string {
     case 12:
       return `Permet de comparer les branches distantes et locales.`;
     default:
-      return 'Unknown step';
+      return `Etape inconnue`;
   }
 }

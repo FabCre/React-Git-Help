@@ -3,8 +3,8 @@ const hotfixSteps: string[] = [
   'git checkout [hashDuCommit]',
   'git checkout -b hotfix/leBugAFixer',
   'git commit',
-  'déployer en preprod la branche hotfix et effectuer des tests',
-  'déployer en prodcution la branche hotfix et tester',
+  'Déployer en pré-production la branche hotfix et tester',
+  'Déployer en production la branche hotfix et tester',
   'git cherry-pick [hashDuCommit]',
 ];
 
@@ -21,7 +21,7 @@ export function getHotfixStepContent(step: number): string {
     case 3:
       return 'Commiter le fix';
     case 4:
-      return 'Via le système de déploiement (deployit) déployer la branche en uat puis vérifier avant la mise en prod';
+      return 'Via le système de déploiement déployer la branche en uat / pré-production puis vérifier avant la mise en production';
     case 5:
       return 'Via le système de déploiement, effectuer une mise en production de cette nouvelle branche comprennant la production actuelle plus le commit de fix';
     case 6:

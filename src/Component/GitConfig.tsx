@@ -1,19 +1,22 @@
 import React from 'react';
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
+import { Paper, Typography } from '@material-ui/core';
 
 import { simpleConfig, advancedConfig } from '../data/configs';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
+      backgroundColor: '#282C34',
       margin: '1em',
       padding: theme.spacing(2, 2),
+      color: '#adb0bb',
     },
     textarea: {
+      color: '#e6e5e8',
       width: '100%',
       height: '10em',
+      backgroundColor: '#282C34',
     },
   }),
 );

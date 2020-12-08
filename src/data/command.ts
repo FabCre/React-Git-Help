@@ -16,7 +16,7 @@ const cmdTable: CommandTable = [
   {
     cmd: 'git clone [dépot a cloner]',
     desc: 'Clone un dépot sur la machine dans le dossier où la command est lancée.',
-    example: 'Attention à la confgiuration de git: clé ssh et droit sur le dépot distant.',
+    example: 'Attention à la configuration de git: clé ssh et droit sur le dépot distant.',
   },
   {
     cmd: 'git status',

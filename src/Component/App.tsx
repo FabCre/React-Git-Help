@@ -15,13 +15,25 @@ const theme = createMuiTheme({
   overrides: {
     MuiAppBar: {
       root: {
-        backgroundColor: 'darkorchid',
+        backgroundColor: '#8a85ff',
         color: 'white !important',
       },
     },
     MuiPaper: {
       root: {
+        color: 'white',
         borderRadius: '0.3%',
+        backgroundColor: '#282C34',
+      },
+    },
+    MuiStepLabel: {
+      label: {
+        color: 'white !important',
+      },
+    },
+    MuiButton: {
+      root: {
+        color: '#adb0bb',
       },
     },
   },

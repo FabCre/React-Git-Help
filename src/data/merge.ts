@@ -34,7 +34,7 @@ export function getMergeStepContent(step: number): string {
     case 8:
       return `Faire un log pour afficher et s'assurer du bon fonctionnement du merge.`;
     case 9:
-      return `Push sur la branche master distante`;
+      return `Push sur la branche master distante.`;
     default:
       return 'Etape inconnue';
   }
