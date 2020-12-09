@@ -2,7 +2,7 @@
   "name": "git-help-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://www.await.fr/git",
+  "homepage": "https://fabcre.github.io/React-Git-Help/",
   "dependencies": {
     "@material-ui/core": "4.11.2",
     "@material-ui/icons": "4.11.2",
