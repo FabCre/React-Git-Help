@@ -171,6 +171,11 @@ const cmdTable: CommandTable = [
     cmd: 'git revert [hash du commit]',
     desc: "Permet de créer un commit de revert afin d'annuler son contenu.",
   },
+  {
+    cmd: 'git tag [nom du tag] [hash du commit]',
+    desc: 'Permet de créer un tag sur un commit pour indiquer clairement une version.',
+    example: 'git tag RC1.0 c81c9ab puis un git push pour envoyer le tag.',
+  },
 ];
 
 export default cmdTable;
