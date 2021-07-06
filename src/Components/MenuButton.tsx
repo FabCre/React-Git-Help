@@ -1,7 +1,5 @@
 import React from 'react';
-import { createStyles, makeStyles, Theme } from '@material-ui/core';
-import { Menu, MenuItem, IconButton } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
+import { createStyles, makeStyles, Theme, Menu, MenuItem, IconButton } from '@material-ui/core';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -39,7 +37,7 @@ const MenuButton: React.FC<MenuButtonProps> = ({ chooseCategory }) => {
         aria-controls="simple-menu"
         aria-haspopup="true"
       >
-        <MenuIcon />
+        ICON
       </IconButton>
       <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
         <MenuItem

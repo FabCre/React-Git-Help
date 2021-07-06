@@ -1,13 +1,13 @@
 import React from 'react';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import { Button, Paper, Step, StepLabel, StepContent, Stepper, Typography } from '@material-ui/core';
+import { Button, Paper, Step, StepLabel, Stepper, StepContent, Typography, makeStyles, Theme, createStyles } from '@material-ui/core';
 
-import hotfixSteps, { getHotfixStepContent } from '../../data/hotfix';
+import mergeSteps, { getMergeStepContent } from '../../assets/data/merge';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       margin: '1em',
+      backgroundColor: '#282C34',
     },
     button: {
       fontSize: 'smaller',
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const HotfixVerticalLinearStepper: React.FC = () => {
+const MergeVerticalLinearStepper: React.FC = () => {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
 
@@ -46,18 +46,18 @@ const HotfixVerticalLinearStepper: React.FC = () => {
   return (
     <div className={classes.root}>
       <Stepper activeStep={activeStep} orientation="vertical">
-        {hotfixSteps.map((label, index) => (
+        {mergeSteps.map((label, index) => (
           <Step key={label}>
             <StepLabel>{label}</StepLabel>
             <StepContent>
-              <Typography>{getHotfixStepContent(index)}</Typography>
+              <Typography>{getMergeStepContent(index)}</Typography>
               <div className={classes.actionsContainer}>
                 <div>
                   <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>
                     Précédent
                   </Button>
                   <Button variant="contained" color="primary" onClick={handleNext} className={classes.button}>
-                    {activeStep === hotfixSteps.length - 1 ? 'Terminé' : 'Suivant'}
+                    {activeStep === mergeSteps.length - 1 ? 'Terminé' : 'Suivant'}
                   </Button>
                 </div>
               </div>
@@ -65,9 +65,9 @@ const HotfixVerticalLinearStepper: React.FC = () => {
           </Step>
         ))}
       </Stepper>
-      {activeStep === hotfixSteps.length && (
+      {activeStep === mergeSteps.length && (
         <Paper square elevation={0} className={classes.resetContainer}>
-          <Typography>Hotfix Terminé!</Typography>
+          <Typography>Merge Terminé!</Typography>
           <Button onClick={handleReset} className={classes.button}>
             Reset
           </Button>
@@ -77,4 +77,4 @@ const HotfixVerticalLinearStepper: React.FC = () => {
   );
 };
 
-export default HotfixVerticalLinearStepper;
+export default MergeVerticalLinearStepper;

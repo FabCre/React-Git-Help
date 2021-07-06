@@ -1,8 +1,8 @@
 import React from 'react';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import { Button, Paper, Step, StepLabel, Stepper, StepContent, Typography } from '@material-ui/core';
+import { Theme } from '@material-ui/core/styles';
+import { Button, Paper, Step, StepLabel, StepContent, Stepper, Typography, makeStyles, createStyles } from '@material-ui/core';
 
-import rebaseSteps, { getRebaseStepContent } from '../../data/rebase';
+import hotfixSteps, { getHotfixStepContent } from '../../assets/data/hotfix';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const RebaseVerticalLinearStepper: React.FC = () => {
+const HotfixVerticalLinearStepper: React.FC = () => {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
 
@@ -46,18 +46,18 @@ const RebaseVerticalLinearStepper: React.FC = () => {
   return (
     <div className={classes.root}>
       <Stepper activeStep={activeStep} orientation="vertical">
-        {rebaseSteps.map((label, index) => (
+        {hotfixSteps.map((label, index) => (
           <Step key={label}>
             <StepLabel>{label}</StepLabel>
             <StepContent>
-              <Typography>{getRebaseStepContent(index)}</Typography>
+              <Typography>{getHotfixStepContent(index)}</Typography>
               <div className={classes.actionsContainer}>
                 <div>
                   <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>
-                    Précedent
+                    Précédent
                   </Button>
                   <Button variant="contained" color="primary" onClick={handleNext} className={classes.button}>
-                    {activeStep === rebaseSteps.length - 1 ? 'Terminé' : 'Suivant'}
+                    {activeStep === hotfixSteps.length - 1 ? 'Terminé' : 'Suivant'}
                   </Button>
                 </div>
               </div>
@@ -65,9 +65,9 @@ const RebaseVerticalLinearStepper: React.FC = () => {
           </Step>
         ))}
       </Stepper>
-      {activeStep === rebaseSteps.length && (
+      {activeStep === hotfixSteps.length && (
         <Paper square elevation={0} className={classes.resetContainer}>
-          <Typography>Rebase Terminé!</Typography>
+          <Typography>Hotfix Terminé!</Typography>
           <Button onClick={handleReset} className={classes.button}>
             Reset
           </Button>
@@ -77,4 +77,4 @@ const RebaseVerticalLinearStepper: React.FC = () => {
   );
 };
 
-export default RebaseVerticalLinearStepper;
+export default HotfixVerticalLinearStepper;

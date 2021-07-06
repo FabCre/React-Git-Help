@@ -10,8 +10,7 @@ const cmdTable: CommandTable = [
   {
     cmd: 'git init',
     desc: 'Initialise un nouveau dépot sur la machine dans le dossier où la command est lancée.',
-    example:
-      "Nouveau projet Git local à partir d'un dossier local. Si on veut ensuite le partager sur GitHub, il faudra alors paramétrer le remote",
+    example: "Nouveau projet Git local à partir d'un dossier local. Si on veut ensuite le partager sur GitHub, il faudra alors paramétrer le remote",
   },
   {
     cmd: 'git clone [dépot a cloner]',
@@ -115,19 +114,16 @@ const cmdTable: CommandTable = [
   },
   {
     cmd: 'git pull',
-    desc:
-      "Recupère les derniers commits, le git pull effectue par défaut un fetch puis un merge, il est préférable d'utiliser le flag --rebase afin de placer son travail en tête de branche",
+    desc: "Recupère les derniers commits, le git pull effectue par défaut un fetch puis un merge, il est préférable d'utiliser le flag --rebase afin de placer son travail en tête de branche",
     example: 'git pull adresse.git',
   },
   {
     cmd: 'git add [fichier a ajouter dans le commit]',
-    desc:
-      'Ajoute le fichier nommée, mettre un espace entre chaque fichier à ajouter au comit. En utilisant le git add . tout est ajouté dans le commit.',
+    desc: 'Ajoute le fichier nommée, mettre un espace entre chaque fichier à ajouter au comit. En utilisant le git add . tout est ajouté dans le commit.',
   },
   {
     cmd: 'git add -p',
-    desc:
-      'Permet d\'effectuer une review des dernières modifications et n\'ajouter que ce qui est nécessaire au présent commit. Attention, les fichiers "untracked" ne seront pas reviewés.',
+    desc: 'Permet d\'effectuer une review des dernières modifications et n\'ajouter que ce qui est nécessaire au présent commit. Attention, les fichiers "untracked" ne seront pas reviewés.',
   },
   {
     cmd: 'git reset HEAD .',
@@ -135,8 +131,7 @@ const cmdTable: CommandTable = [
   },
   {
     cmd: 'git commit',
-    desc:
-      "Ouvre l'éditeur de texte et permet de taper un titre de commit suivi d'un message. Attention, le titre et le message doivent être séparé par une ligne vide.",
+    desc: "Ouvre l'éditeur de texte et permet de taper un titre de commit suivi d'un message. Attention, le titre et le message doivent être séparé par une ligne vide.",
   },
   {
     cmd: 'git commit -m [titre du commit]',

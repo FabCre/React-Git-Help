@@ -1,8 +1,7 @@
 import React from 'react';
-import { createStyles, makeStyles } from '@material-ui/core/styles';
-import { Paper, Table, TableCell, TableBody, TableHead, TableRow } from '@material-ui/core';
+import { Paper, Table, TableCell, TableBody, TableHead, TableRow, makeStyles, createStyles } from '@material-ui/core';
 
-import cmdTable from '../data/command';
+import cmdTable from '../assets/data/command';
 
 const useStyles = makeStyles(() =>
   createStyles({

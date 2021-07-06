@@ -1,14 +1,12 @@
 import React from 'react';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import { Button, Paper, Step, StepLabel, Stepper, StepContent, Typography } from '@material-ui/core';
+import { Button, Paper, Step, StepLabel, Stepper, StepContent, Typography, makeStyles, Theme, createStyles } from '@material-ui/core';
 
-import mergeSteps, { getMergeStepContent } from '../../data/merge';
+import rebaseSteps, { getRebaseStepContent } from '../../assets/data/rebase';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       margin: '1em',
-      backgroundColor: '#282C34',
     },
     button: {
       fontSize: 'smaller',
@@ -28,7 +26,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const MergeVerticalLinearStepper: React.FC = () => {
+const RebaseVerticalLinearStepper: React.FC = () => {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
 
@@ -47,18 +45,18 @@ const MergeVerticalLinearStepper: React.FC = () => {
   return (
     <div className={classes.root}>
       <Stepper activeStep={activeStep} orientation="vertical">
-        {mergeSteps.map((label, index) => (
+        {rebaseSteps.map((label, index) => (
           <Step key={label}>
             <StepLabel>{label}</StepLabel>
             <StepContent>
-              <Typography>{getMergeStepContent(index)}</Typography>
+              <Typography>{getRebaseStepContent(index)}</Typography>
               <div className={classes.actionsContainer}>
                 <div>
                   <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>
-                    Précédent
+                    Précedent
                   </Button>
                   <Button variant="contained" color="primary" onClick={handleNext} className={classes.button}>
-                    {activeStep === mergeSteps.length - 1 ? 'Terminé' : 'Suivant'}
+                    {activeStep === rebaseSteps.length - 1 ? 'Terminé' : 'Suivant'}
                   </Button>
                 </div>
               </div>
@@ -66,9 +64,9 @@ const MergeVerticalLinearStepper: React.FC = () => {
           </Step>
         ))}
       </Stepper>
-      {activeStep === mergeSteps.length && (
+      {activeStep === rebaseSteps.length && (
         <Paper square elevation={0} className={classes.resetContainer}>
-          <Typography>Merge Terminé!</Typography>
+          <Typography>Rebase Terminé!</Typography>
           <Button onClick={handleReset} className={classes.button}>
             Reset
           </Button>
@@ -78,4 +76,4 @@ const MergeVerticalLinearStepper: React.FC = () => {
   );
 };
 
-export default MergeVerticalLinearStepper;
+export default RebaseVerticalLinearStepper;
