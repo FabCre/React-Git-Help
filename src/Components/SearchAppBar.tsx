@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, InputBase, createStyles, fade, Theme, makeStyles } from '@material-ui/core';
+import { AppBar, Toolbar, Typography, InputBase, createStyles, fade, Theme, makeStyles, Link } from '@material-ui/core';
 
 import MenuButton from './MenuButton';
 import { MenuCategory } from './App';
@@ -79,11 +79,12 @@ const SearchAppBar: React.FC<SearchAppBarType> = ({ chooseCategory, searchChange
           <Typography className={classes.title} variant="h4" noWrap>
             Git Help {category ? category : null}
           </Typography>
+          <Typography>
+            <Link href="https://git-scm.com/docs" target="_blank">GIT DOC</Link>
+          </Typography>
           {category === 'Command' && (
             <div className={classes.search}>
-              <div className={classes.searchIcon}>
-                ICON
-              </div>
+              <div className={classes.searchIcon}>ICON</div>
               <InputBase
                 placeholder="Search Command"
                 classes={{

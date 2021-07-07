@@ -8,7 +8,7 @@ type CommandTable = Command[];
 
 const cmdTable: CommandTable = [
   {
-    cmd: 'git init',
+    cmd: 'git init [nom du projet]',
     desc: 'Initialise un nouveau dépot sur la machine dans le dossier où la command est lancée.',
     example: "Nouveau projet Git local à partir d'un dossier local. Si on veut ensuite le partager sur GitHub, il faudra alors paramétrer le remote",
   },
@@ -92,7 +92,7 @@ const cmdTable: CommandTable = [
   },
   {
     cmd: 'git stash pop',
-    desc: 'Reprend ce qui à été ajouté en brouillon.',
+    desc: 'Reprend ce qui à été ajouté en brouillon et le supprime du brouillon.',
   },
   {
     cmd: 'git stash apply',
@@ -130,6 +130,14 @@ const cmdTable: CommandTable = [
     desc: 'Permet de supprimer les fichiers et/ou dossiers ajouter par erreur.',
   },
   {
+    cmd: 'git reset [hash du commit]',
+    desc: 'Annule tous les commits après le commit ciblé, en conservant les modifications localement.',
+  },
+  {
+    cmd: 'git reset [nom de fichier]',
+    desc: "Enlève le fichier de l'index, mais conserve son contenu.",
+  },
+  {
     cmd: 'git commit',
     desc: "Ouvre l'éditeur de texte et permet de taper un titre de commit suivi d'un message. Attention, le titre et le message doivent être séparé par une ligne vide.",
   },
@@ -156,7 +164,7 @@ const cmdTable: CommandTable = [
   },
   {
     cmd: 'git fetch',
-    desc: 'Permet de synchroniser le local et le remote.',
+    desc: "Permet de récupérer tout l'historique et les modifications du repo.",
   },
   {
     cmd: 'git cherry-pick [hash du commit]',
