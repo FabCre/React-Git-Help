@@ -1,5 +1,6 @@
 import React from 'react';
-import { createStyles, makeStyles, Theme, Menu, MenuItem, IconButton } from '@material-ui/core';
+import { createStyles, makeStyles, Theme, Menu, MenuItem, IconButton, Link } from '@material-ui/core';
+import MenuIcon from '@material-ui/icons/Menu';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -29,15 +30,8 @@ const MenuButton: React.FC<MenuButtonProps> = ({ chooseCategory }) => {
 
   return (
     <div>
-      <IconButton
-        edge="start"
-        className={classes.menuButton}
-        color="inherit"
-        onClick={handleClick}
-        aria-controls="simple-menu"
-        aria-haspopup="true"
-      >
-        ICON
+      <IconButton edge="start" className={classes.menuButton} color="inherit" onClick={handleClick} aria-controls="simple-menu" aria-haspopup="true">
+        <MenuIcon />
       </IconButton>
       <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
         <MenuItem
@@ -78,7 +72,12 @@ const MenuButton: React.FC<MenuButtonProps> = ({ chooseCategory }) => {
             handleClose();
           }}
         >
-          GitConfig
+          Git config
+        </MenuItem>
+        <MenuItem>
+          <Link href="https://git-scm.com/docs" target="_blank" color="inherit">
+            Git official doc
+          </Link>
         </MenuItem>
       </Menu>
     </div>

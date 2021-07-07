@@ -1,5 +1,6 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, InputBase, createStyles, fade, Theme, makeStyles, Link } from '@material-ui/core';
+import { alpha, AppBar, createStyles, InputBase, makeStyles, Theme, Toolbar, Typography } from '@material-ui/core';
+import SearchIcon from '@material-ui/icons/Search';
 
 import MenuButton from './MenuButton';
 import { MenuCategory } from './App';
@@ -23,9 +24,9 @@ const useStyles = makeStyles((theme: Theme) =>
     search: {
       position: 'relative',
       borderRadius: theme.shape.borderRadius,
-      backgroundColor: fade(theme.palette.common.white, 0.15),
+      backgroundColor: alpha(theme.palette.common.white, 0.15),
       '&:hover': {
-        backgroundColor: fade(theme.palette.common.white, 0.25),
+        backgroundColor: alpha(theme.palette.common.white, 0.25),
       },
       marginLeft: 0,
       width: '100%',
@@ -79,12 +80,11 @@ const SearchAppBar: React.FC<SearchAppBarType> = ({ chooseCategory, searchChange
           <Typography className={classes.title} variant="h4" noWrap>
             Git Help {category ? category : null}
           </Typography>
-          <Typography>
-            <Link href="https://git-scm.com/docs" target="_blank">GIT DOC</Link>
-          </Typography>
           {category === 'Command' && (
             <div className={classes.search}>
-              <div className={classes.searchIcon}>ICON</div>
+              <div className={classes.searchIcon}>
+                <SearchIcon />
+              </div>
               <InputBase
                 placeholder="Search Command"
                 classes={{

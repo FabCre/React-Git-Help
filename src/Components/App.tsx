@@ -1,5 +1,5 @@
 import React from 'react';
-import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
+import { createTheme, MuiThemeProvider } from '@material-ui/core';
 
 import SearchAppBar from './SearchAppBar';
 import GitConfig from './GitConfig';
@@ -10,7 +10,7 @@ import RebaseVerticalLinearStepper from './Process/RebaseVerticalLinearStepper';
 
 import './App.scss';
 
-const theme = createMuiTheme({
+const theme = createTheme({
   overrides: {
     MuiAppBar: {
       root: {
@@ -38,7 +38,7 @@ const theme = createMuiTheme({
   },
 });
 
-export type MenuCategory = 'Merge Process' | 'Rebase Process' | 'HotFix Process' | 'GitConfig' | 'Command';
+export type MenuCategory = 'Merge Process' | 'Rebase Process' | 'HotFix Process' | 'Git config' | 'Command';
 
 const App: React.FC = () => {
   const [category, setCategory] = React.useState<MenuCategory>('Command');
@@ -57,7 +57,7 @@ const App: React.FC = () => {
     <div className="root">
       <MuiThemeProvider theme={theme}>
         <SearchAppBar chooseCategory={onCategoryChoose} searchChange={onSearchChange} category={category} />
-        {category === 'GitConfig' && <GitConfig />}
+        {category === 'Git config' && <GitConfig />}
         {category === 'Command' && <CommandTable searchValue={searchValue} />}
         {category === 'Rebase Process' && <RebaseVerticalLinearStepper />}
         {category === 'Merge Process' && <MergeVerticalLinearStepper />}
