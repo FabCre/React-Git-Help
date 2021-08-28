@@ -177,7 +177,7 @@ const cmdTable: CommandTable = [
   {
     cmd: 'git tag [nom du tag] [hash du commit]',
     desc: 'Permet de créer un tag sur un commit pour indiquer clairement une version.',
-    example: 'git tag RC1.0 c81c9ab puis un git push pour envoyer le tag.',
+    example: 'git tag RC1.0 c81c9ab puis un "git push --tags" pour envoyer le tag.',
   },
 ];
 
